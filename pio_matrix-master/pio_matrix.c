@@ -138,6 +138,7 @@ double desenho5[NUM_FRAMES][NUM_PIXELS] = {
      1, 0, 0, 0, 1,
      1, 0, 0, 0, 1},
 };
+
 // Rotina de interrupção
 static void gpio_irq_handler(uint gpio, uint32_t events)
 {
