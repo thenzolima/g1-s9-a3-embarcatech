@@ -6,6 +6,7 @@
 #include "hardware/clocks.h"
 #include "hardware/adc.h"
 #include "pico/bootrom.h"
+#include "hardware/timer.h" // função do teclado
 
 // Arquivo PIO
 #include "pio_matrix.pio.h"
@@ -18,6 +19,10 @@
 #define ROWS 4
 #define COLS 4
 
+// Botões de interrupção
+const uint button_0 = 5;
+const uint button_1 = 6;
+
 // Declaração das matrizes do teclado matricial
 const uint colunas[COLS] = {21, 20, 19, 18};
 const uint linhas[ROWS] = {28, 27, 26, 22};
@@ -28,9 +33,41 @@ const char teclas[ROWS][COLS] = {
     {'*', '0', '#', 'D'}};
 
 // Vetores de animação
-double desenho_teste[NUM_FRAMES][NUM_PIXELS] = {
-    {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0},
-    {1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1},
+double desenho3[NUM_FRAMES][NUM_PIXELS] = {
+    // Frame 1: Visualização de letra G
+    {1, 1, 1, 1, 1,
+     0, 0, 0, 0, 1,
+     1, 1, 1, 1, 1,
+     1, 0, 0, 0, 1,
+     1, 1, 1, 1, 1},
+
+    // Frame 2: Visualização da letra P
+    {1, 1, 1, 1, 1,
+     1, 0, 0, 0, 1,
+     1, 1, 1, 1, 1,
+     0, 0, 0, 0, 1,
+     1, 0, 0, 0, 0},
+
+    // Frame 3: Visualização da letra I
+    {0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0},
+
+    // Frame 4: Visualização da letra O
+    {1, 1, 1, 1, 1,
+     1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1,
+     1, 1, 1, 1, 1},
+
+    // Frame 5: Visualizção da letra U
+    {1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1,
+     1, 1, 1, 1, 1},
 };
 
 double desenho4[NUM_FRAMES][NUM_PIXELS] = {
@@ -70,6 +107,13 @@ double desenho4[NUM_FRAMES][NUM_PIXELS] = {
      0, 0, 0, 0, 0},
 };
 
+// Rotina de interrupção
+static void gpio_irq_handler(uint gpio, uint32_t events)
+{
+    printf("Interrupção ocorreu no pino %d, no evento %d\n", gpio, events);
+    printf("HABILITANDO O MODO GRAVAÇÃO\n");
+    reset_usb_boot(0, 0); // habilita o modo de gravação do microcontrolador
+}
 
 // Funções auxiliares
 void init_pinos()
@@ -128,22 +172,30 @@ void animar_matriz(double *desenho, uint32_t cor, PIO pio, uint sm)
 
 void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
 {
-    double r = 0, g = 0, b = 0;
-
     switch (tecla)
     {
-    case '1': r = 0; g = 0; b = 1; break; // Azul
-    case '2': r = 1; g = 0; b = 0; break; // Vermelho
-    case '3': r = 0; g = 1; b = 0; break; // Verde
-    case '4': r = 0.5; g = 0.5; b = 0.5; break; // Branco
-    case '*': reset_usb_boot(0, 0); return;
-    default: return;
-    }
+    case '3': // Animação para o desenho3
+        for (int i = 0; i < NUM_FRAMES; i++)
+        {
+            animar_matriz(desenho3[i], cor, pio, sm);
+            sleep_ms(500);
+        }
+        break;
 
-    for (int i = 0; i < NUM_FRAMES; i++)
-    {
-        animar_matriz(tecla == '4' ? desenho4[i] : desenho_teste[i], cor, pio, sm);
-        sleep_ms(500);
+    case '4': // Animação para o desenho4
+        for (int i = 0; i < NUM_FRAMES; i++)
+        {
+            animar_matriz(desenho4[i], cor, pio, sm);
+            sleep_ms(500);
+        }
+        break;
+
+    case '*': // Reseta o microcontrolador
+        reset_usb_boot(0, 0);
+        return;
+
+    default:
+        return; // Nenhuma ação para outras teclas
     }
 }
 
@@ -159,6 +211,18 @@ int main()
 
     init_pinos();
 
+    // Inicializar os botões de interrupção
+    gpio_init(button_0);
+    gpio_set_dir(button_0, GPIO_IN);
+    gpio_pull_up(button_0);
+
+    gpio_init(button_1);
+    gpio_set_dir(button_1, GPIO_IN);
+    gpio_pull_up(button_1);
+
+    // Interrupção da GPIO habilitada
+    gpio_set_irq_enabled_with_callback(button_0, GPIO_IRQ_EDGE_FALL, 1, &gpio_irq_handler);
+
     while (true)
     {
         char tecla = escanear_teclado();
@@ -166,4 +230,3 @@ int main()
             executar_acao(tecla, 0, pio, sm);
     }
 }
-
