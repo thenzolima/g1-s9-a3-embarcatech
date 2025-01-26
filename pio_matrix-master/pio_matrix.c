@@ -167,6 +167,11 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
     case '2': r = 1; g = 0; b = 0; break; // Vermelho
     case '3': r = 0; g = 1; b = 0; break; // Verde
     case '4': r = 0.5; g = 0.5; b = 0.5; break; // Branco
+    case '5':
+        for (int i = 0; i < NUM_FRAMES; i++){
+            animar_matriz(desenho5[i], cor, pio,sm);
+            sleep_ms(500);
+        }; break;
     case '*': reset_usb_boot(0, 0); return;
     default: return;
     }
