@@ -304,7 +304,7 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
         // Exibe o frame atual
         animar_matriz(desenho2[i], cor, pio, sm);// Reproduz som para o frame atual
         tocar_buzzer(frequencias[i], 250); // 250ms de duração para cada som
-        //sleep_ms(500); // Pausa antes do próximo frame
+        
     }
 
     break;
