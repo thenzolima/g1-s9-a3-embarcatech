@@ -206,6 +206,41 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
 {
     switch (tecla)
     {
+
+        //Teclas A,B,C,D e #:
+
+    case 'A': // Apagar todos os LEDs
+        for (int i = 0; i < NUM_PIXELS; i++) {
+            pio_sm_put_blocking(pio, sm, criar_cor(0, 0, 0));
+        }
+        break;
+
+    case 'B': // Todos os LEDs na cor azul, intensidade 100%
+        for (int i = 0; i < NUM_PIXELS; i++) {
+            pio_sm_put_blocking(pio, sm, criar_cor(1.0, 0.0, 0.0));
+        }
+        break;
+
+    case 'C': // Todos os LEDs na cor vermelha, intensidade 80%
+        for (int i = 0; i < NUM_PIXELS; i++) {
+            pio_sm_put_blocking(pio, sm, criar_cor(0.0, 0.8, 0.0));
+        }
+        break;
+
+    case 'D': // Todos os LEDs na cor verde, intensidade 50%
+        for (int i = 0; i < NUM_PIXELS; i++) {
+            pio_sm_put_blocking(pio, sm, criar_cor(0.0, 0.0, 0.5));
+        }
+        break;
+
+    case '#': // Todos os LEDs na cor branca, intensidade 20%
+        for (int i = 0; i < NUM_PIXELS; i++) {
+            pio_sm_put_blocking(pio, sm, criar_cor(0.2, 0.2, 0.2));
+        }
+        break;
+
+    //Teclas A,B,C,D e #
+
     case '3': // Animação para o desenho3
         for (int i = 0; i < NUM_FRAMES; i++)
         {
