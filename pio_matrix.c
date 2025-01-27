@@ -242,7 +242,7 @@ void animar_matriz(double *desenho, uint32_t cor, PIO pio, uint sm)
     }
 }
 void tocar_buzzer(int frequencia, int duracao_ms) {
-    int periodo_us = 1000000 / frequencia;   // Período total em microssegundos
+    int periodo_us = 500000  / frequencia;   // Período total em microssegundos
     int meio_ciclo = periodo_us / 2;        // Meio ciclo
     int ciclos = (duracao_ms * 1000) / periodo_us; // Total de ciclos para a duração
 
@@ -304,7 +304,7 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
         // Exibe o frame atual
         animar_matriz(desenho2[i], cor, pio, sm);// Reproduz som para o frame atual
         tocar_buzzer(frequencias[i], 250); // 250ms de duração para cada som
-        sleep_ms(250); // Pausa antes do próximo frame
+        //sleep_ms(500); // Pausa antes do próximo frame
     }
 
     break;
