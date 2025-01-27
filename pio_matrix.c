@@ -58,11 +58,11 @@ double desenho2[NUM_FRAMES][NUM_PIXELS] = {
      0, 0, 1, 0, 0},
 
     // Frame 4: Letra "C"
-    {0, 1, 1, 1, 1,
-     1, 0, 0, 0, 0,
-     1, 0, 0, 0, 0,
-     1, 0, 0, 0, 0,
-     0, 1, 1, 1, 1},
+    {0, 0, 0, 0, 0,
+     0, 1, 1, 1, 0,
+     0, 1, 0, 0, 0,
+     0, 1, 1, 1, 0,
+     0, 0, 0, 0, 0},
 
     // Frame 5: Letra "X"
     {1, 0, 0, 0, 1,
@@ -241,6 +241,18 @@ void animar_matriz(double *desenho, uint32_t cor, PIO pio, uint sm)
         pio_sm_put_blocking(pio, sm, valor);
     }
 }
+void tocar_buzzer(int frequencia, int duracao_ms) {
+    int periodo_us = 1000000 / frequencia;   // Período total em microssegundos
+    int meio_ciclo = periodo_us / 2;        // Meio ciclo
+    int ciclos = (duracao_ms * 1000) / periodo_us; // Total de ciclos para a duração
+
+    for (int i = 0; i < ciclos; i++) {
+        gpio_put(BUZZER_PIN, true);         // Liga o buzzer
+        busy_wait_us(meio_ciclo);          // Aguarda meio ciclo
+        gpio_put(BUZZER_PIN, false);       // Desliga o buzzer
+        busy_wait_us(meio_ciclo);          // Aguarda outro meio ciclo
+    }
+}
 
 void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
 {
@@ -281,12 +293,22 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
 
     //Teclas A,B,C,D e #
 
-    case '2': // Animação para o desenho2
+    case '2': // Animação para o desenho2 com som variável por frame
+    gpio_init(BUZZER_PIN);                // Inicializa o pino do buzzer
+    gpio_set_dir(BUZZER_PIN, GPIO_OUT);   // Define o pino como saída
+
+    int frequencias[NUM_FRAMES] = {1000, 1500, 1800, 1200, 2000}; // Frequências por frame
+
     for (int i = 0; i < NUM_FRAMES; i++) {
-        animar_matriz(desenho2[i], cor, pio, sm);
-        sleep_ms(500);
+        
+        // Exibe o frame atual
+        animar_matriz(desenho2[i], cor, pio, sm);// Reproduz som para o frame atual
+        tocar_buzzer(frequencias[i], 250); // 250ms de duração para cada som
+        sleep_ms(250); // Pausa antes do próximo frame
     }
+
     break;
+
 
     case '3': // Animação para o desenho3
         for (int i = 0; i < NUM_FRAMES; i++)
