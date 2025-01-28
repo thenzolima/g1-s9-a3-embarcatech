@@ -179,6 +179,36 @@ double desenho5[NUM_FRAMES][NUM_PIXELS] = {
      1, 0, 0, 0, 1},
 };
 
+double desenho6[NUM_FRAMES][NUM_PIXELS] = {
+    // Frame 1: Letra "T"
+    {1, 1, 1, 1, 1,
+     0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0,
+     0, 0, 1, 0, 0},
+
+    // Frame 2: Letra "E"
+    {1, 1, 1, 1, 1,
+     1, 0, 0, 0, 0,
+     1, 1, 1, 1, 0,
+     1, 0, 0, 0, 0,
+     1, 1, 1, 1, 1},
+
+    // Frame 3: Letra "C"
+    {0, 1, 1, 1, 1,
+     1, 0, 0, 0, 0,
+     1, 0, 0, 0, 0,
+     1, 0, 0, 0, 0,
+     0, 1, 1, 1, 1},
+
+    // Frame 4: Letra "H"
+    {1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1,
+     1, 1, 1, 1, 1,
+     1, 0, 0, 0, 1,
+     1, 0, 0, 0, 1}
+};
+
 // Rotina de interrupção
 static void gpio_irq_handler(uint gpio, uint32_t events)
 {
@@ -326,10 +356,18 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
         }
         break;
 
-    case '5': // Animação para o desenho4
+    case '5': // Animação para o desenho5
         for (int i = 0; i < NUM_FRAMES; i++)
         {
             animar_matriz(desenho5[i], cor, pio, sm);
+            sleep_ms(500);
+        }
+        break;
+
+    case '6': // Animação para o desenho6
+        for (int i = 0; i < NUM_FRAMES; i++)
+        {
+            animar_matriz(desenho6[i], cor, pio, sm);
             sleep_ms(500);
         }
         break;

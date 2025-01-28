@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc")
+set(CMAKE_C_COMPILER "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "13.3.1")
@@ -21,11 +21,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-ar")
-set(CMAKE_C_COMPILER_AR "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc-ar")
-set(CMAKE_RANLIB "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-ranlib")
-set(CMAKE_C_COMPILER_RANLIB "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc-ranlib")
-set(CMAKE_LINKER "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-ld")
+set(CMAKE_AR "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-ar.exe")
+set(CMAKE_C_COMPILER_AR "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-ld.exe")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_C_COMPILER_LINKER "NOTFOUND")
@@ -74,7 +74,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1/include;/home/enzo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1/include-fixed;/home/enzo/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1/include;C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1/include-fixed;C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp;/home/enzo/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp;/home/enzo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1;/home/enzo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc;/home/enzo/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp;C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp;C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc/arm-none-eabi/13.3.1;C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/lib/gcc;C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
