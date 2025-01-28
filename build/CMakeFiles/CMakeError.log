@@ -1,0 +1,126 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-3nlAQg
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_10211/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_10211.dir/build.make CMakeFiles/cmTC_10211.dir/build
+gmake[1]: Entering directory '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-3nlAQg'
+Building C object CMakeFiles/cmTC_10211.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc   -mcpu=cortex-m0plus -mthumb    -v -std=gnu11 -o CMakeFiles/cmTC_10211.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
+gcc: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+gcc: error: unrecognized command-line option '-mthumb'
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-12-bTRWOB/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-12-bTRWOB/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.0 (Debian 12.2.0-14) 
+gmake[1]: *** [CMakeFiles/cmTC_10211.dir/build.make:78: CMakeFiles/cmTC_10211.dir/CMakeCCompilerABI.c.o] Error 1
+gmake[1]: Leaving directory '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-3nlAQg'
+gmake: *** [Makefile:127: cmTC_10211/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-9TJVAL
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4ee10/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4ee10.dir/build.make CMakeFiles/cmTC_4ee10.dir/build
+gmake[1]: Entrando no diretório '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-9TJVAL'
+
+Building C object CMakeFiles/cmTC_4ee10.dir/testCCompiler.c.o
+/usr/bin/gcc   -mcpu=cortex-m0plus -mthumb  -std=gnu11 -o CMakeFiles/cmTC_4ee10.dir/testCCompiler.c.o -c /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-9TJVAL/testCCompiler.c
+gcc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+gcc: error: unrecognized command-line option ‘-mthumb’
+gmake[1]: *** [CMakeFiles/cmTC_4ee10.dir/build.make:78: CMakeFiles/cmTC_4ee10.dir/testCCompiler.c.o] Erro 1
+gmake[1]: Saindo do diretório '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-9TJVAL'
+
+gmake: *** [Makefile:127: cmTC_4ee10/fast] Erro 2
+
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-U9LB6S
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_854dc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_854dc.dir/build.make CMakeFiles/cmTC_854dc.dir/build
+gmake[1]: Entering directory '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-U9LB6S'
+Building C object CMakeFiles/cmTC_854dc.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc   -mcpu=cortex-m0plus -mthumb    -v -std=gnu11 -o CMakeFiles/cmTC_854dc.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
+gcc: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+gcc: error: unrecognized command-line option '-mthumb'
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-12-bTRWOB/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-12-bTRWOB/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.0 (Debian 12.2.0-14) 
+gmake[1]: *** [CMakeFiles/cmTC_854dc.dir/build.make:78: CMakeFiles/cmTC_854dc.dir/CMakeCCompilerABI.c.o] Error 1
+gmake[1]: Leaving directory '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-U9LB6S'
+gmake: *** [Makefile:127: cmTC_854dc/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-G9cMgA
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_18ffc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_18ffc.dir/build.make CMakeFiles/cmTC_18ffc.dir/build
+gmake[1]: Entrando no diretório '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-G9cMgA'
+
+Building C object CMakeFiles/cmTC_18ffc.dir/testCCompiler.c.o
+/usr/bin/gcc   -mcpu=cortex-m0plus -mthumb  -std=gnu11 -o CMakeFiles/cmTC_18ffc.dir/testCCompiler.c.o -c /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-G9cMgA/testCCompiler.c
+gcc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+gcc: error: unrecognized command-line option ‘-mthumb’
+gmake[1]: *** [CMakeFiles/cmTC_18ffc.dir/build.make:78: CMakeFiles/cmTC_18ffc.dir/testCCompiler.c.o] Erro 1
+gmake[1]: Saindo do diretório '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-G9cMgA'
+
+gmake: *** [Makefile:127: cmTC_18ffc/fast] Erro 2
+
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-jnSVhT
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_51b4c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_51b4c.dir/build.make CMakeFiles/cmTC_51b4c.dir/build
+gmake[1]: Entering directory '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-jnSVhT'
+Building C object CMakeFiles/cmTC_51b4c.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc   -mcpu=cortex-m0plus -mthumb    -v -std=gnu11 -o CMakeFiles/cmTC_51b4c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
+gcc: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+gcc: error: unrecognized command-line option '-mthumb'
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-12-bTRWOB/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-12-bTRWOB/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.0 (Debian 12.2.0-14) 
+gmake[1]: *** [CMakeFiles/cmTC_51b4c.dir/build.make:78: CMakeFiles/cmTC_51b4c.dir/CMakeCCompilerABI.c.o] Error 1
+gmake[1]: Leaving directory '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-jnSVhT'
+gmake: *** [Makefile:127: cmTC_51b4c/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-UtuuL0
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_aecf2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aecf2.dir/build.make CMakeFiles/cmTC_aecf2.dir/build
+gmake[1]: Entrando no diretório '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-UtuuL0'
+
+Building C object CMakeFiles/cmTC_aecf2.dir/testCCompiler.c.o
+/usr/bin/gcc   -mcpu=cortex-m0plus -mthumb  -std=gnu11 -o CMakeFiles/cmTC_aecf2.dir/testCCompiler.c.o -c /home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-UtuuL0/testCCompiler.c
+gcc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+gcc: error: unrecognized command-line option ‘-mthumb’
+gmake[1]: *** [CMakeFiles/cmTC_aecf2.dir/build.make:78: CMakeFiles/cmTC_aecf2.dir/testCCompiler.c.o] Erro 1
+gmake[1]: Saindo do diretório '/home/enzo/.github/g1-s9-a3-embarcatech/build/CMakeFiles/CMakeScratch/TryCompile-UtuuL0'
+
+gmake: *** [Makefile:127: cmTC_aecf2/fast] Erro 2
+
+
+
