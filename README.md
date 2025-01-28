@@ -27,4 +27,4 @@ Feito por: Subgrupo 9 do Grupo 1
 4. Com o ambiente configurado, basta abrir o `diagram.json` e executar o simulador
 
 ---
-Vídeo ensaio:
+Vídeo ensaio: https://youtu.be/wk9ScYvWfIU?si=aBhCoHYazIIiU_xh
