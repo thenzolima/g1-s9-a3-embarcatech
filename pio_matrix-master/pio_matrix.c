@@ -234,10 +234,11 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
         break;
 
     case '#': // Todos os LEDs na cor branca, intensidade 20%
-        for (int i = 0; i < NUM_PIXELS; i++) {
-            pio_sm_put_blocking(pio, sm, criar_cor(0.2, 0.2, 0.2));
-        }
-        break;
+    uint32_t cor_branca_20 = criar_cor(0.2, 0.2, 0.2); // Calcula a cor apenas uma vez
+    for (int i = 0; i < NUM_PIXELS; i++) {
+        pio_sm_put_blocking(pio, sm, cor_branca_20); // Reutiliza o mesmo valor
+    }
+    break;
 
     //Teclas A,B,C,D e #
 
