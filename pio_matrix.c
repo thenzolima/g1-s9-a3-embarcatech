@@ -316,59 +316,75 @@ void executar_acao(char tecla, uint32_t cor, PIO pio, uint sm)
         break;
 
     case '#': // Todos os LEDs na cor branca, intensidade 20%
+        uint32_t cor_branca_20 = criar_cor(0.2, 0.2, 0.2); // Calcula a cor apenas uma vez
         for (int i = 0; i < NUM_PIXELS; i++) {
-            pio_sm_put_blocking(pio, sm, criar_cor(0.2, 0.2, 0.2));
+            pio_sm_put_blocking(pio, sm, cor_branca_20); // Reutiliza o mesmo valor
         }
         break;
 
     //Teclas A,B,C,D e #
 
     case '2': // Animação para o desenho2 com som variável por frame
-    gpio_init(BUZZER_PIN);                // Inicializa o pino do buzzer
-    gpio_set_dir(BUZZER_PIN, GPIO_OUT);   // Define o pino como saída
+        gpio_init(BUZZER_PIN);                
+        gpio_set_dir(BUZZER_PIN, GPIO_OUT);   
 
-    int frequencias[NUM_FRAMES] = {1000, 1500, 1800, 1200, 2000}; // Frequências por frame
+        int frequencias[NUM_FRAMES] = {1000, 1500, 1800, 1200, 2000}; 
 
-    for (int i = 0; i < NUM_FRAMES; i++) {
-        
-        // Exibe o frame atual
-        animar_matriz(desenho2[i], cor, pio, sm);// Reproduz som para o frame atual
-        tocar_buzzer(frequencias[i], 250); // 250ms de duração para cada som
-        
-    }
-
-    break;
-
+        for (int i = 0; i < NUM_FRAMES; i++) {
+            animar_matriz(desenho2[i], cor, pio, sm);
+            tocar_buzzer(frequencias[i], 250);
+        }
+        break;
 
     case '3': // Animação para o desenho3
-        for (int i = 0; i < NUM_FRAMES; i++)
-        {
+        gpio_init(BUZZER_PIN);                
+        gpio_set_dir(BUZZER_PIN, GPIO_OUT);   
+
+        int frequencias3[NUM_FRAMES] = {800, 1200, 1600, 2000, 1400};
+
+        for (int i = 0; i < NUM_FRAMES; i++) {
             animar_matriz(desenho3[i], cor, pio, sm);
-            sleep_ms(500);
+            tocar_buzzer(frequencias3[i], 250);
+            sleep_ms(250); // Pequena pausa entre os frames
         }
         break;
 
     case '4': // Animação para o desenho4
-        for (int i = 0; i < NUM_FRAMES; i++)
-        {
+        gpio_init(BUZZER_PIN);                
+        gpio_set_dir(BUZZER_PIN, GPIO_OUT);   
+
+        int frequencias4[NUM_FRAMES] = {500, 1000, 1500, 1000, 500};
+
+        for (int i = 0; i < NUM_FRAMES; i++) {
             animar_matriz(desenho4[i], cor, pio, sm);
-            sleep_ms(500);
+            tocar_buzzer(frequencias4[i], 250);
+            sleep_ms(250);
         }
         break;
 
     case '5': // Animação para o desenho5
-        for (int i = 0; i < NUM_FRAMES; i++)
-        {
+        gpio_init(BUZZER_PIN);                
+        gpio_set_dir(BUZZER_PIN, GPIO_OUT);   
+
+        int frequencias5[NUM_FRAMES] = {1200, 1400, 1600, 1800, 2000};
+
+        for (int i = 0; i < NUM_FRAMES; i++) {
             animar_matriz(desenho5[i], cor, pio, sm);
-            sleep_ms(500);
+            tocar_buzzer(frequencias5[i], 250);
+            sleep_ms(250);
         }
         break;
 
     case '6': // Animação para o desenho6
-        for (int i = 0; i < NUM_FRAMES; i++)
-        {
+        gpio_init(BUZZER_PIN);                
+        gpio_set_dir(BUZZER_PIN, GPIO_OUT);   
+
+        int frequencias6[NUM_FRAMES] = {2000, 1600, 1200, 800, 400};
+
+        for (int i = 0; i < NUM_FRAMES; i++) {
             animar_matriz(desenho6[i], cor, pio, sm);
-            sleep_ms(500);
+            tocar_buzzer(frequencias6[i], 250);
+            sleep_ms(250);
         }
         break;
 

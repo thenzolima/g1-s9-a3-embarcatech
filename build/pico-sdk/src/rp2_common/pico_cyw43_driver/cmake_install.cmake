@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Rodrigo/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_cyw43_driver
+# Install script for directory: /home/enzo/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_cyw43_driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/pio_matrix")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,11 +34,11 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/Rodrigo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "/home/enzo/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Rodrigo/Documents/EmbarcaTech/Unidade 4/Tarefa 2 - Unidade 4/g1-s9-a3-embarcatech/build/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cmake_install.cmake")
+  include("/home/enzo/.github/g1-s9-a3-embarcatech/build/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cmake_install.cmake")
 endif()
 
