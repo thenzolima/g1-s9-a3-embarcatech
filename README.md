@@ -1,1 +1,1 @@
-# g1-s9-a3-embarcatech
+Leitura de botão no GPIO 6 e acionamento da Matriz de Leds pela GPIO 07.
